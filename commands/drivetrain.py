@@ -21,8 +21,8 @@ class DrivetrainCommand(CommandInterface):
         pass
 
     def _drive(self) -> None:
-        self.leftMotor = self.gasValue - self.steerValue
-        self.rightMotor = self.gasValue + self.steerValue 
+        self.leftMotor.set(self.gasValue - self.steerValue)
+        self.rightMotor.set(self.gasValue + self.steerValue)
 
     def _trigger(self, btn_v: float, index: int = 0) -> None:
         if index == 0:
